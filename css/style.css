@@ -1,0 +1,113 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #c3fca6;
+    color: white;
+    text-align: center;
+    border-top: solid 2px #4BAE02;
+}
+
+#compteur{
+    color: greenyellow;
+    float: right;
+}
+#le-message-du-bas {
+    color: darkgreen;
+}
+#lien_sub{
+    text-decoration: underline;
+    color: blue;
+}
+.container-fluid {
+    padding-right:0;
+    padding-left:0;
+    margin-right:auto;
+    margin-left:auto
+}
+#contenu{
+    padding: 0 80px;
+}
+#entete{
+    padding: 0;
+    background-color: #C3FCA6;
+    margin-bottom: 10px;
+    border-bottom: solid 2px #4BAE02;
+
+}
+#titre{
+    position: absolute;
+    top: 6px;
+    left: 120px;
+    margin-top: 10px;
+    font-family: 'Prompt', sans-serif;
+    color: darkgreen;
+}
+#formLogin{
+    visibility: visible;
+}
+#formConducteur{
+    visibility: hidden;
+}
+#formPassager{
+    visibility: hidden;
+}
+
+#map {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    margin-left:300px;
+    margin-top:230px;
+}
+
+.button_passager{
+    float: right;
+}
+#nomUtilisateur{
+    text-decoration: underline;
+    clear: both;
+}
+.noteBasPage{
+    color: forestgreen;
+    bottom: 0;
+}
+.adresseChoose:hover{
+    color: blue;
+    text-decoration: none;
+}
+.adresseChoose:hover{
+    color: blue;
+    text-decoration: none;
+}
+
+/* code en plus
+    .button_passager{
+        float: right;
+    }
+    #nomUtilisateur{
+        text-decoration: underline;
+        clear: both;
+    }
+    .noteBasPage{
+        color: forestgreen;
+        bottom: 0;
+    }
+    #entete{
+        background-color: #C3FCA6;
+        margin-bottom: 10px;
+        border-bottom: solid 2px #4BAE02;
+
+    }
+    #titre{
+        position: absolute;
+        top: 6px;
+        left: 120px;
+        margin-top: 10px;
+        font-family: 'Prompt', sans-serif;
+    }
+
+
+
+*/

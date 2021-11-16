@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>J'te Conduis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="img/Vehicule.png">
+</head>
+<body>
+<div class="container-fluid h-100 bg-light text-dark">
+    <div class="row justify-content-center align-items-center">
+        <h1 id="titre">J'te Conduis</h1>
+    </div>
+    <div  class="float-right" id="entete">
+        <a href="index.html"> <img id="vehiculeIcon" src="img/Vehicule.png" width="6%" height="6%"></a>
+    </div>
+</div>
+    <div id="contenu" class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <h1 style="text-align: center;">Connexion</h1>
+            <br><br><br>
+            <form id="formulaire" action="#" onsubmit="return getForm(this)">
+                <div class="form-group">
+                    <label>Email :</label>
+                    <input type="email" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Mot de passe :</label>
+                    <input type="password" class="form-control" />
+                </div>
+                <br>
+                <div class="form-group text-center">
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optradio" value="Conducteur">Conducteur
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="optradio" value="Passager">Passager
+                        </label>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col"><input type="submit" class="col-12 btn btn-success btn-sm float-right" value="Se connecter"></div>
+                            <a onclick="genererInscription()" id="lien_sub">Pas de compte ?</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+<footer>
+    <p id="le-message-du-bas">1 crédit vert = 10km parcourus &nbsp &nbsp &nbsp &nbsp |&nbsp &nbsp &nbsp &nbsp 10 crédits verts = 1 arbre planté 🌳</p>
+</footer>
+<script src="js/test.js"></script>
+</body>
+</html>

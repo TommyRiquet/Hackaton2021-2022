@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Affichage données</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body >
+<div class="container-fluid h-100 bg-light text-dark">
+    <div class="row justify-content-center align-items-center">
+        <h1 id="titre">J'te Conduis</h1>
+    </div>
+    <div  class="float-right" id="entete">
+        <img id="vehiculeIcon" src="../img/Vehicule.png" width="6%" height="6%">
+    </div>
+</div>
+<!--
+    <div  id="map"></div>
+    <script async
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7ZWKCSV3gS7_U2Vd7H4x92HeWT6a1Vwc&callback=initMap">
+    </script>
+-->
+<div id="row">
+    <button type="button" class="btn btn-success button_passager">Passer en passager</button>
+    <h3 id="nomUtilisateur">Conducteur : Tommy Riquet</h3>
+    <p>Nombre de crédit vert récoltés : 0.4</p>
+</div>
+    <h5>Requête en attente</h5>
+    <table class="table">
+        <thead class="table-dark">
+        <tr><td>Nom du passager</td><td>Adresse du passager</td><td>Adresse de l'établissement EPHEC</td><td>Trajet</td><td>Heure de départ</td><td>Nombre de passagers</td><td>Choix</td></tr>
+        </thead>
+        <tbody id="requete">
+        <tr><td>Mounir Jebbari</td><td id="adresseSource1">Brusselbaan 230 1600 Sint-Pieters-Leeuw</td><td id="adresseDestination1">Avenue du Ciseau 15 1348 Ottignies-Louvain-la-Neuve</td><td id="voirTrajet1">Voir le Trajet</td><td>12h30</td><td>2</td><td><button type="button" class="btn btn-danger">X</button><button type="button" class="btn btn-success">✅</button></td></tr>
+        <tr><td>Jarod Boulanger</td><td id="adresseSource2">Avenue de la serpentine 1390 Grez-Doiceau</td><td id="adresseDestination2">Avenue du Ciseau 15 1348 Ottignies-Louvain-la-Neuve</td><td id="voirTrajet2">Voir le Trajet</td><td>8h30</td><td>1</td><td><button type="button" class="btn btn-danger">X</button><button type="button" class="btn btn-success">✅</button></td></tr>
+
+        </tbody>
+    </table>
+    <h5>Historique</h5>
+    <table class="table">
+        <thead class="table-dark">
+        <tr><td>Nom du passager</td><td>Distance</td><td>Durée</td><td>Nombre de passagers</td><td>Crédit vert gagnées</td></tr>
+        </thead>
+        <tbody id="historique">
+        <tr><td>Antoine Moens Pennewaert</td><td>20 km</td><td>30 min</td><td>2</td><td>0.2</td></tr>
+        <tr><td>Kevin Keurvels</td><td>68 km</td><td>70 min</td><td>2</td><td>0.2</td></tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script>
+
+
+
+
+/*
+
+
+// Initialize and add the map
+    function initMap() {
+        const coord = { lat: 50.80246189894455, lng: 4.274493298315478 };
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 15,
+            center: coord ,
+            mapTypeId: "terrain",
+        });
+        const marker = new google.maps.Marker({
+            position: coord,
+            map: map,
+        });
+    }
+
+//Récuperation de la distance et le temps d'un itinéraire
+   function getDistance(coord1x,coord1y,coord2x,coord2y){//4 CHIFFRES APRES LA VIRGULE
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "https://maps.open-street.com/api/route/?origin="+coord1x+","+coord1y+"&destination="+coord2x+","+coord2y+"&mode=driving&key=143323c5ab5dfe15ec89b2bbb320bea7", true);
+        xhr.onload=function(){
+            var data = JSON.parse(xhr.responseText)
+            polyline = data.polyline;
+        }
+        xhr.send();
+    }
+
+//Recuperation des coordonnées
+    let coord1x;
+    let coord1y;
+    let coord2x;
+    let coord2y;
+    function getCoord(str){
+        let adr = document.getElementById(str).innerText;
+        adr=adr.replaceAll(" ","+");
+        console.log("adr : " + adr)
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "https://maps.open-street.com/api/geocoding/?address="+adr+"&sensor=false&key=143323c5ab5dfe15ec89b2bbb320bea7", true);
+        xhr.onload=function(){
+            var data = JSON.parse(xhr.responseText)
+        }
+        xhr.send();
+    }
+*/
+
+    genererCarte();
+
+
+    function genererCarte(){
+        let coord1x = "50.70950";
+        let coord1y = "4.62868";
+        let coord2x = "50.66610";
+        let coord2y = "4.61191";
+
+        document.getElementById("voirTrajet1").innerHTML = "<a href='https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route="+coord1x+"%2C"+coord1y+"%3B"+coord2x+"%2C"+coord2y+"#map=13/50.6919/4.6180' target='_blank'>Voir le Trajet</a>" ;
+
+        coord1x = "50.73856 ";
+        coord1y = "4.70249" ;
+        coord2x = "50.66610";
+        coord2y = "4.61191";
+
+        document.getElementById("voirTrajet2").innerHTML = "<a href='https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route="+coord1x+"%2C"+coord1y+"%3B"+coord2x+"%2C"+coord2y+"#map=13/50.6919/4.6180' target='_blank'>Voir le Trajet</a>" ;
+
+    }
+
+</script>
+</html>
